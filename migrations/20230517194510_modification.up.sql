@@ -1,0 +1,150 @@
+-- Add up migration script here
+-- Alter the customers table
+ALTER TABLE customers
+ALTER COLUMN id
+SET NOT NULL,
+    ALTER COLUMN customer_name
+SET NOT NULL,
+    ALTER COLUMN email
+SET NOT NULL,
+    ALTER COLUMN phone_number
+SET NOT NULL,
+ ALTER COLUMN cic_number
+SET NOT NULL,
+    ALTER COLUMN inserted_at
+SET NOT NULL,
+    ALTER COLUMN updated_at
+SET NOT NULL;
+
+-- Alter the accounts table
+ALTER TABLE accounts
+ALTER COLUMN id
+SET NOT NULL,
+    ALTER COLUMN account_number
+SET NOT NULL,
+    ALTER COLUMN balance
+SET NOT NULL,
+    ALTER COLUMN opened_date
+SET NOT NULL,
+    ALTER COLUMN last_updated_date
+SET NOT NULL,
+    ALTER COLUMN account_type
+SET NOT NULL,
+    ALTER COLUMN customer_id
+SET NOT NULL,
+    ALTER COLUMN inserted_at
+SET NOT NULL,
+    ALTER COLUMN updated_at
+SET NOT NULL;
+-- Alter the cards table
+ALTER TABLE cards
+ALTER COLUMN id
+SET NOT NULL,
+    ALTER COLUMN card_number
+SET NOT NULL,
+    ALTER COLUMN account_number
+SET NOT NULL,
+    ALTER COLUMN expiration_date
+SET NOT NULL,
+    ALTER COLUMN cvv
+SET NOT NULL,
+    ALTER COLUMN issued_date
+SET NOT NULL,
+    ALTER COLUMN balance
+SET NOT NULL,
+    ALTER COLUMN card_status
+SET NOT NULL,
+    ALTER COLUMN card_type
+SET NOT NULL,
+    ALTER COLUMN inserted_at
+SET NOT NULL,
+    ALTER COLUMN updated_at
+SET NOT NULL;
+-- Alter the beneficiaries table
+ALTER TABLE beneficiaries
+ALTER COLUMN id
+SET NOT NULL,
+    ALTER COLUMN customer_id
+SET NOT NULL,
+    ALTER COLUMN beneficiary_name
+SET NOT NULL,
+    ALTER COLUMN beneficiary_account_number
+SET NOT NULL,
+    ALTER COLUMN inserted_at
+SET NOT NULL,
+    ALTER COLUMN updated_at
+SET NOT NULL;
+-- Alter the transactions table
+ALTER TABLE transactions
+ALTER COLUMN id
+SET NOT NULL,
+    ALTER COLUMN account_number
+SET NOT NULL,
+    ALTER COLUMN card_number
+SET NOT NULL,
+    ALTER COLUMN transaction_type
+SET NOT NULL,
+    ALTER COLUMN amount
+SET NOT NULL,
+    ALTER COLUMN transaction_date
+SET NOT NULL,
+    ALTER COLUMN status
+SET NOT NULL,
+    ALTER COLUMN inserted_at
+SET NOT NULL,
+    ALTER COLUMN updated_at
+SET NOT NULL;
+-- Alter the refunds table
+ALTER TABLE refunds
+ALTER COLUMN id
+SET NOT NULL,
+    ALTER COLUMN transaction_id
+SET NOT NULL,
+    ALTER COLUMN refund_amount
+SET NOT NULL,
+    ALTER COLUMN refund_date
+SET NOT NULL,
+    ALTER COLUMN status
+SET NOT NULL,
+    ALTER COLUMN inserted_at
+SET NOT NULL,
+    ALTER COLUMN updated_at
+SET NOT NULL;
+-- Alter the loans table
+ALTER TABLE loans
+ALTER COLUMN id
+SET NOT NULL,
+    ALTER COLUMN amount
+SET NOT NULL,
+    ALTER COLUMN interest_rate
+SET NOT NULL,
+    ALTER COLUMN start_date
+SET NOT NULL,
+    ALTER COLUMN end_date
+SET NOT NULL,
+    ALTER COLUMN status
+SET NOT NULL,
+    ALTER COLUMN lender_card_number
+SET NOT NULL,
+    ALTER COLUMN borrower_card_number
+SET NOT NULL,
+    ALTER COLUMN inserted_at
+SET NOT NULL,
+    ALTER COLUMN updated_at
+SET NOT NULL;
+-- Alter the transfers table
+ALTER TABLE transfers
+ALTER COLUMN id
+SET NOT NULL,
+    ALTER COLUMN sender_card_number
+SET NOT NULL,
+    ALTER COLUMN beneficiary_account_number
+SET NOT NULL,
+    ALTER COLUMN amount
+SET NOT NULL,
+    ALTER COLUMN transfer_date
+SET NOT NULL,
+    ALTER COLUMN inserted_at
+SET NOT NULL,
+    ALTER COLUMN updated_at
+SET NOT NULL;
